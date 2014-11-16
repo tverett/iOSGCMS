@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7247F27D1A0587B500380AD8"
-               BuildableName = "cgms.app"
-               BlueprintName = "cgms"
+               BuildableName = "&#9;.app"
+               BlueprintName = "&#9;"
                ReferencedContainer = "container:cgms.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7247F27D1A0587B500380AD8"
-            BuildableName = "cgms.app"
-            BlueprintName = "cgms"
+            BuildableName = "&#9;.app"
+            BlueprintName = "&#9;"
             ReferencedContainer = "container:cgms.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7247F27D1A0587B500380AD8"
-            BuildableName = "cgms.app"
-            BlueprintName = "cgms"
+            BuildableName = "&#9;.app"
+            BlueprintName = "&#9;"
             ReferencedContainer = "container:cgms.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -80,8 +80,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7247F27D1A0587B500380AD8"
-            BuildableName = "cgms.app"
-            BlueprintName = "cgms"
+            BuildableName = "&#9;.app"
+            BlueprintName = "&#9;"
             ReferencedContainer = "container:cgms.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

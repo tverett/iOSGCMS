@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		722B51861A17E6FC008114DF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 722B51851A17E6FC008114DF /* HealthKit.framework */; };
 		7247F2821A0587B500380AD8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7247F2811A0587B500380AD8 /* Foundation.framework */; };
 		7247F2841A0587B500380AD8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7247F2831A0587B500380AD8 /* CoreGraphics.framework */; };
 		7247F2861A0587B500380AD8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7247F2851A0587B500380AD8 /* UIKit.framework */; };
@@ -26,6 +27,12 @@
 		7247F2C61A05883900380AD8 /* RfduinoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7247F2BF1A05883900380AD8 /* RfduinoManager.m */; };
 		7247F2C71A05883900380AD8 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7247F2C21A05883900380AD8 /* ScanViewController.m */; };
 		7247F2C91A058B5300380AD8 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7247F2C81A058B5300380AD8 /* CoreBluetooth.framework */; };
+		726249861A17169D003D38C3 /* PebbleVendor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 726249851A17169D003D38C3 /* PebbleVendor.framework */; };
+		726249881A1716A2003D38C3 /* PebbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 726249871A1716A2003D38C3 /* PebbleKit.framework */; };
+		7262498A1A1716DB003D38C3 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 726249891A1716DB003D38C3 /* ExternalAccessory.framework */; };
+		7262498C1A1716F3003D38C3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7262498B1A1716F3003D38C3 /* libz.dylib */; };
+		7262498E1A171703003D38C3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7262498D1A171703003D38C3 /* CoreMotion.framework */; };
+		726249901A171713003D38C3 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7262498F1A171713003D38C3 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7247F27E1A0587B500380AD8 /* cgms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cgms.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		722B51841A17E6FC008114DF /* 	.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "\t.entitlements"; sourceTree = "<group>"; };
+		722B51851A17E6FC008114DF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		7247F27E1A0587B500380AD8 /* 	.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "	.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7247F2811A0587B500380AD8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7247F2831A0587B500380AD8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		7247F2851A0587B500380AD8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -69,6 +78,12 @@
 		7247F2C11A05883900380AD8 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
 		7247F2C21A05883900380AD8 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
 		7247F2C81A058B5300380AD8 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		726249851A17169D003D38C3 /* PebbleVendor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PebbleVendor.framework; path = "../pebble-ios-sdk-master/PebbleVendor.framework"; sourceTree = "<group>"; };
+		726249871A1716A2003D38C3 /* PebbleKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PebbleKit.framework; path = "../pebble-ios-sdk-master/PebbleKit.framework"; sourceTree = "<group>"; };
+		726249891A1716DB003D38C3 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		7262498B1A1716F3003D38C3 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		7262498D1A171703003D38C3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		7262498F1A171713003D38C3 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +91,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				726249901A171713003D38C3 /* MessageUI.framework in Frameworks */,
+				7262498E1A171703003D38C3 /* CoreMotion.framework in Frameworks */,
+				722B51861A17E6FC008114DF /* HealthKit.framework in Frameworks */,
+				7262498C1A1716F3003D38C3 /* libz.dylib in Frameworks */,
+				7262498A1A1716DB003D38C3 /* ExternalAccessory.framework in Frameworks */,
+				726249881A1716A2003D38C3 /* PebbleKit.framework in Frameworks */,
+				726249861A17169D003D38C3 /* PebbleVendor.framework in Frameworks */,
 				7247F2C91A058B5300380AD8 /* CoreBluetooth.framework in Frameworks */,
 				7247F2841A0587B500380AD8 /* CoreGraphics.framework in Frameworks */,
 				7247F2861A0587B500380AD8 /* UIKit.framework in Frameworks */,
@@ -99,6 +121,7 @@
 		7247F2751A0587B500380AD8 = {
 			isa = PBXGroup;
 			children = (
+				722B51841A17E6FC008114DF /* 	.entitlements */,
 				7247F2B61A05883900380AD8 /* rfduino */,
 				7247F2871A0587B500380AD8 /* cgms */,
 				7247F2A61A0587B500380AD8 /* cgmsTests */,
@@ -110,7 +133,7 @@
 		7247F27F1A0587B500380AD8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7247F27E1A0587B500380AD8 /* cgms.app */,
+				7247F27E1A0587B500380AD8 /* 	.app */,
 				7247F29F1A0587B500380AD8 /* cgmsTests.xctest */,
 			);
 			name = Products;
@@ -119,6 +142,13 @@
 		7247F2801A0587B500380AD8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				722B51851A17E6FC008114DF /* HealthKit.framework */,
+				7262498F1A171713003D38C3 /* MessageUI.framework */,
+				7262498D1A171703003D38C3 /* CoreMotion.framework */,
+				7262498B1A1716F3003D38C3 /* libz.dylib */,
+				726249891A1716DB003D38C3 /* ExternalAccessory.framework */,
+				726249871A1716A2003D38C3 /* PebbleKit.framework */,
+				726249851A17169D003D38C3 /* PebbleVendor.framework */,
 				7247F2C81A058B5300380AD8 /* CoreBluetooth.framework */,
 				7247F2811A0587B500380AD8 /* Foundation.framework */,
 				7247F2831A0587B500380AD8 /* CoreGraphics.framework */,
@@ -192,9 +222,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7247F27D1A0587B500380AD8 /* cgms */ = {
+		7247F27D1A0587B500380AD8 /* 	 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7247F2B01A0587B500380AD8 /* Build configuration list for PBXNativeTarget "cgms" */;
+			buildConfigurationList = 7247F2B01A0587B500380AD8 /* Build configuration list for PBXNativeTarget "	" */;
 			buildPhases = (
 				7247F27A1A0587B500380AD8 /* Sources */,
 				7247F27B1A0587B500380AD8 /* Frameworks */,
@@ -204,9 +234,9 @@
 			);
 			dependencies = (
 			);
-			name = cgms;
+			name = "	";
 			productName = cgms;
-			productReference = 7247F27E1A0587B500380AD8 /* cgms.app */;
+			productReference = 7247F27E1A0587B500380AD8 /* 	.app */;
 			productType = "com.apple.product-type.application";
 		};
 		7247F29E1A0587B500380AD8 /* cgmsTests */ = {
@@ -236,6 +266,14 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "___FULLUSERNAME___";
 				TargetAttributes = {
+					7247F27D1A0587B500380AD8 = {
+						DevelopmentTeam = 7UJFMU84Y9;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
+					};
 					7247F29E1A0587B500380AD8 = {
 						TestTargetID = 7247F27D1A0587B500380AD8;
 					};
@@ -254,7 +292,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7247F27D1A0587B500380AD8 /* cgms */,
+				7247F27D1A0587B500380AD8 /* 	 */,
 				7247F29E1A0587B500380AD8 /* cgmsTests */,
 			);
 		};
@@ -309,7 +347,7 @@
 /* Begin PBXTargetDependency section */
 		7247F2A51A0587B500380AD8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7247F27D1A0587B500380AD8 /* cgms */;
+			target = 7247F27D1A0587B500380AD8 /* 	 */;
 			targetProxy = 7247F2A41A0587B500380AD8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -376,6 +414,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -407,6 +446,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -417,10 +457,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "\t.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/donaldbrowne/Desktop/pebble-ios-sdk-master",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cgms/cgms-Prefix.pch";
 				INFOPLIST_FILE = "cgms/cgms-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -430,10 +478,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "\t.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/donaldbrowne/Desktop/pebble-ios-sdk-master",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cgms/cgms-Prefix.pch";
 				INFOPLIST_FILE = "cgms/cgms-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -490,13 +546,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7247F2B01A0587B500380AD8 /* Build configuration list for PBXNativeTarget "cgms" */ = {
+		7247F2B01A0587B500380AD8 /* Build configuration list for PBXNativeTarget "	" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7247F2B11A0587B500380AD8 /* Debug */,
 				7247F2B21A0587B500380AD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7247F2B31A0587B500380AD8 /* Build configuration list for PBXNativeTarget "cgmsTests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +562,7 @@
 				7247F2B51A0587B500380AD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

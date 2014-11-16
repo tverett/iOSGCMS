@@ -7,7 +7,7 @@
 //
 
 #import "AppViewController.h"
-
+#import <PebbleKit/PebbleKit.h>
 
 @interface AppViewController ()
 
@@ -33,6 +33,8 @@ static int NEW_SENSOR=0x0E;
 static int TRANSMITTER_FULL_PACKET=0x0F;
 static int RESET=0x10;
 
+PBWatch *_targetWatch;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -42,6 +44,12 @@ static int RESET=0x10;
     self.glucose.text = @"0";
     [self sendByte:GLUCOSE];
     [NSTimer scheduledTimerWithTimeInterval:60 target:(self) selector:@selector(send) userInfo:nil repeats:YES];
+    
+    // We'd like to get called when Pebbles connect and disconnect, so become the delegate of PBPebbleCentral:
+    [[PBPebbleCentral defaultCentral] setDelegate:self];
+    
+    // Initialize with the last connected watch:
+    [self setTargetWatch:[[PBPebbleCentral defaultCentral] lastConnectedWatch]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,6 +82,7 @@ static int RESET=0x10;
 }
 
 
+
 - (void)didReceive:(NSData *)data
 {
     NSLog(@"RecievedData");
@@ -96,12 +105,76 @@ static int RESET=0x10;
         int number = value[1] | value[2] << 8;
         NSString* gluc = [NSString stringWithFormat:@"%i", number];
         self.glucose.text=gluc;
+        
+        
+        
+        // Send data to watch:
+        // See demos/feature_app_messages/weather.c in the native watch app SDK for the same definitions on the watch's end:
+        
+        // NSURLConnection's completionHandler is called on the background thread.
+        // Prepare a block to show an alert on the main thread:
+        __block NSString *message = @"";
+        void (^showAlert)(void) = ^{
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [[[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            }];
+        };
+        
+        NSNumber *iconKey = @(0); // This is our custom-defined key for the icon ID, which is of type uint8_t.
+        NSNumber *temperatureKey = @(1); // This is our custom-defined key for the temperature string.
+        NSDictionary *update = @{ temperatureKey:[NSString stringWithFormat:@"%d", number] };
+        [_targetWatch appMessagesPushUpdate:update onSent:^(PBWatch *watch, NSDictionary *update, NSError *error) {
+            message = error ? [error localizedDescription] : @"Update sent!";
+            //showAlert();
+        }];
     }
     
+}
+
+
+
+//pebble
+- (void)setTargetWatch:(PBWatch*)watch {
+    _targetWatch = watch;
     
-    //    [image1 setImage:on];
-    //else
-    //    [image1 setImage:off];
+    // NOTE:
+    // For demonstration purposes, we start communicating with the watch immediately upon connection,
+    // because we are calling -appMessagesGetIsSupported: here, which implicitely opens the communication session.
+    // Real world apps should communicate only if the user is actively using the app, because there
+    // is one communication session that is shared between all 3rd party iOS apps.
+    
+    // Test if the Pebble's firmware supports AppMessages / Weather:
+    [watch appMessagesGetIsSupported:^(PBWatch *watch, BOOL isAppMessagesSupported) {
+        if (isAppMessagesSupported) {
+            // Configure our communications channel to target the weather app:
+            // See demos/feature_app_messages/weather.c in the native watch app SDK for the same definition on the watch's end:
+            uint8_t bytes[] = {0x28, 0xAF, 0x3D, 0xC7, 0xE4, 0x0D, 0x49, 0x0F, 0xBE, 0xF2, 0x29, 0x54, 0x8C, 0x8B, 0x06, 0x00};
+            NSData *uuid = [NSData dataWithBytes:bytes length:sizeof(bytes)];
+            [[PBPebbleCentral defaultCentral] setAppUUID:uuid];
+            
+            //NSString *message = [NSString stringWithFormat:@"Yay! %@ supports AppMessages :D", [watch name]];
+            //[[[UIAlertView alloc] initWithTitle:@"Connected!" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        } else {
+            
+            NSString *message = [NSString stringWithFormat:@"Blegh... %@ does NOT support AppMessages :'(", [watch name]];
+            [[[UIAlertView alloc] initWithTitle:@"Connected..." message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        }
+    }];
+}
+
+/*
+ *  PBPebbleCentral delegate methods
+ */
+
+- (void)pebbleCentral:(PBPebbleCentral*)central watchDidConnect:(PBWatch*)watch isNew:(BOOL)isNew {
+    [self setTargetWatch:watch];
+}
+
+- (void)pebbleCentral:(PBPebbleCentral*)central watchDidDisconnect:(PBWatch*)watch {
+    [[[UIAlertView alloc] initWithTitle:@"Disconnected!" message:[watch name] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    if (_targetWatch == watch || [watch isEqual:_targetWatch]) {
+        [self setTargetWatch:nil];
+    }
 }
 
 
