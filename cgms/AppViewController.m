@@ -11,10 +11,14 @@
 
 @interface AppViewController ()
 
+
+@property (nonatomic) UIBackgroundTaskIdentifier backgroundTask;
+
 @end
 
 @implementation AppViewController
 @synthesize rfduino;
+
 
 static int GLUCOSE=0x01;
 static int GLUCOSE_FILT=0x02;
@@ -50,8 +54,13 @@ PBWatch *_targetWatch;
     // We'd like to get called when Pebbles connect and disconnect, so become the delegate of PBPebbleCentral:
     [[PBPebbleCentral defaultCentral] setDelegate:self];
     
-    // Initialize with the last connected watch:
-    //[self setTargetWatch:[[PBPebbleCentral defaultCentral] lastConnectedWatch]];
+     self.backgroundTask = UIBackgroundTaskInvalid;
+    
+    self.backgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+        NSLog(@"Background handler called. Not running background tasks anymore.");
+        [[UIApplication sharedApplication] endBackgroundTask:self.backgroundTask];
+        self.backgroundTask = UIBackgroundTaskInvalid;
+    }];
 }
 //
 - (void)didReceiveMemoryWarning
