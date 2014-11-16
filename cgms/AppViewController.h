@@ -16,6 +16,7 @@
 
 @property(nonatomic, strong) RFduino *rfduino;
 // Properties for your Object controls
+//
 -(void)sendByte:(uint8_t)byte;
 @end
 

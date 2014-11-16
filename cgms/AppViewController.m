@@ -51,7 +51,7 @@ PBWatch *_targetWatch;
     // Initialize with the last connected watch:
     [self setTargetWatch:[[PBPebbleCentral defaultCentral] lastConnectedWatch]];
 }
-
+//
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
