@@ -45,13 +45,13 @@ PBWatch *_targetWatch;
     [self sendByte:GLUCOSE];
     
     //setup timer to check request glucose from rfduino every minute
-    [NSTimer scheduledTimerWithTimeInterval:60 target:(self) selector:@selector(send) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:60 target:(self) selector:@selector(requestGlucose) userInfo:nil repeats:YES];
     
     // We'd like to get called when Pebbles connect and disconnect, so become the delegate of PBPebbleCentral:
     [[PBPebbleCentral defaultCentral] setDelegate:self];
     
     // Initialize with the last connected watch:
-    [self setTargetWatch:[[PBPebbleCentral defaultCentral] lastConnectedWatch]];
+    //[self setTargetWatch:[[PBPebbleCentral defaultCentral] lastConnectedWatch]];
 }
 //
 - (void)didReceiveMemoryWarning
@@ -72,7 +72,7 @@ PBWatch *_targetWatch;
     [self sendByte:GLUCOSE];
 }
 
--(void)send
+-(void)requestGlucose
 {
     [self sendByte:GLUCOSE];
 }
@@ -99,6 +99,9 @@ PBWatch *_targetWatch;
         NSString* gluc = [NSString stringWithFormat:@"%i", number];
         self.glucose.text=gluc;
         
+        //pebble
+        // Initialize with the last connected watch:
+        [self setTargetWatch:[[PBPebbleCentral defaultCentral] lastConnectedWatch]];
         
         // Send data to watch:
         // See demos/feature_app_messages/weather.c in the native watch app SDK for the same definitions on the watch's end:
@@ -147,8 +150,9 @@ PBWatch *_targetWatch;
             NSData *uuid = [NSData dataWithBytes:bytes length:sizeof(bytes)];
             [[PBPebbleCentral defaultCentral] setAppUUID:uuid];
             
-            NSString *message = [NSString stringWithFormat:@"Yay! %@ supports AppMessages :D", [watch name]];
-            [[[UIAlertView alloc] initWithTitle:@"Connected!" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            NSLog(@"Connected to Pebble");
+           // NSString *message = [NSString stringWithFormat:@"Yay! %@ supports AppMessages :D", [watch name]];
+           // [[[UIAlertView alloc] initWithTitle:@"Connected!" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         } else {
             
             NSString *message = [NSString stringWithFormat:@"Blegh... %@ does NOT support AppMessages :'(", [watch name]];
@@ -166,10 +170,11 @@ PBWatch *_targetWatch;
 }
 
 - (void)pebbleCentral:(PBPebbleCentral*)central watchDidDisconnect:(PBWatch*)watch {
-    [[[UIAlertView alloc] initWithTitle:@"Disconnected!" message:[watch name] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-    if (_targetWatch == watch || [watch isEqual:_targetWatch]) {
-        [self setTargetWatch:nil];
-    }
+    NSLog(@"DisConnected from Pebble");
+    //[[[UIAlertView alloc] initWithTitle:@"Disconnected!" message:[watch name] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    //if (_targetWatch == watch || [watch isEqual:_targetWatch]) {
+     //   [self setTargetWatch:nil];
+   // }
 }
 
 
