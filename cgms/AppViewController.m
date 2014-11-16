@@ -43,6 +43,8 @@ PBWatch *_targetWatch;
     
     self.glucose.text = @"0";
     [self sendByte:GLUCOSE];
+    
+    //setup timer to check request glucose from rfduino every minute
     [NSTimer scheduledTimerWithTimeInterval:60 target:(self) selector:@selector(send) userInfo:nil repeats:YES];
     
     // We'd like to get called when Pebbles connect and disconnect, so become the delegate of PBPebbleCentral:
@@ -67,18 +69,12 @@ PBWatch *_targetWatch;
 
 - (IBAction)handleButtonClick:(id)sender {
     NSLog(@"Handle Button Click");
-    //self.glucose.text = @"666";
-    //71 is G for glucose
     [self sendByte:GLUCOSE];
-    
-    //[NSTimer scheduledTimerWithTimeInterval:60 target:(self) selector:@selector(send) userInfo:nil repeats:YES];
-    
 }
 
 -(void)send
 {
     [self sendByte:GLUCOSE];
-    //[timer invalidate];
 }
 
 
@@ -91,11 +87,8 @@ PBWatch *_targetWatch;
     int len = [data length];
     
     
-    NSLog(@"value = %x", len);
-    
-    //if first char is a G
-    
-    
+    NSLog(@"Length = %x", len);
+   
     NSLog(@"value = %i", value[0]);
     NSLog(@"value = %i", value[1]);
     NSLog(@"value = %i", value[2]);
@@ -105,7 +98,6 @@ PBWatch *_targetWatch;
         int number = value[1] | value[2] << 8;
         NSString* gluc = [NSString stringWithFormat:@"%i", number];
         self.glucose.text=gluc;
-        
         
         
         // Send data to watch:
@@ -120,9 +112,9 @@ PBWatch *_targetWatch;
             }];
         };
         
-        NSNumber *iconKey = @(0); // This is our custom-defined key for the icon ID, which is of type uint8_t.
-        NSNumber *temperatureKey = @(1); // This is our custom-defined key for the temperature string.
-        NSDictionary *update = @{ temperatureKey:[NSString stringWithFormat:@"%d", number] };
+        //NSNumber *iconKey = @(0); // This is our custom-defined key for the icon ID, which is of type uint8_t.
+        NSNumber *glucoseKey = @(1); // This is our custom-defined key for the glucose string.
+        NSDictionary *update = @{ glucoseKey:[NSString stringWithFormat:@"%d", number] };
         [_targetWatch appMessagesPushUpdate:update onSent:^(PBWatch *watch, NSDictionary *update, NSError *error) {
             message = error ? [error localizedDescription] : @"Update sent!";
             //showAlert();
@@ -148,12 +140,15 @@ PBWatch *_targetWatch;
         if (isAppMessagesSupported) {
             // Configure our communications channel to target the weather app:
             // See demos/feature_app_messages/weather.c in the native watch app SDK for the same definition on the watch's end:
-            uint8_t bytes[] = {0x28, 0xAF, 0x3D, 0xC7, 0xE4, 0x0D, 0x49, 0x0F, 0xBE, 0xF2, 0x29, 0x54, 0x8C, 0x8B, 0x06, 0x00};
+            uint8_t bytes[] = {0x7f, 0x7a, 0x38, 0x90, 0x1a, 0x1c, 0x43, 0xa3, 0xad, 0xF1, 0x21, 0x44, 0x9e, 0x4f, 0x35, 0x2d};
+            
+            //7f 7a 38 90-1a 1c-43 a3-ad f1-21 44 9e 4f 35 2d
+            
             NSData *uuid = [NSData dataWithBytes:bytes length:sizeof(bytes)];
             [[PBPebbleCentral defaultCentral] setAppUUID:uuid];
             
-            //NSString *message = [NSString stringWithFormat:@"Yay! %@ supports AppMessages :D", [watch name]];
-            //[[[UIAlertView alloc] initWithTitle:@"Connected!" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            NSString *message = [NSString stringWithFormat:@"Yay! %@ supports AppMessages :D", [watch name]];
+            [[[UIAlertView alloc] initWithTitle:@"Connected!" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         } else {
             
             NSString *message = [NSString stringWithFormat:@"Blegh... %@ does NOT support AppMessages :'(", [watch name]];
