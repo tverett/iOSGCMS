@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A63C3901A1997FA00FB5172 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A63C3851A1997FA00FB5172 /* AppDelegate.m */; };
+		6A63C3911A1997FA00FB5172 /* CustomCellBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A63C3871A1997FA00FB5172 /* CustomCellBackground.m */; };
+		6A63C3921A1997FA00FB5172 /* RFduino.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A63C3891A1997FA00FB5172 /* RFduino.m */; };
+		6A63C3931A1997FA00FB5172 /* RfduinoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A63C38C1A1997FA00FB5172 /* RfduinoManager.m */; };
+		6A63C3941A1997FA00FB5172 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A63C38F1A1997FA00FB5172 /* ScanViewController.m */; };
+		6A63C3961A19982000FB5172 /* PebbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A63C3951A19982000FB5172 /* PebbleKit.framework */; };
+		6A63C3981A19983500FB5172 /* PebbleVendor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A63C3971A19983500FB5172 /* PebbleVendor.framework */; };
 		722B51861A17E6FC008114DF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 722B51851A17E6FC008114DF /* HealthKit.framework */; };
 		7247F2821A0587B500380AD8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7247F2811A0587B500380AD8 /* Foundation.framework */; };
 		7247F2841A0587B500380AD8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7247F2831A0587B500380AD8 /* CoreGraphics.framework */; };
@@ -16,19 +23,9 @@
 		7247F2951A0587B500380AD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7247F2931A0587B500380AD8 /* Main.storyboard */; };
 		7247F2981A0587B500380AD8 /* AppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7247F2971A0587B500380AD8 /* AppViewController.m */; };
 		7247F29A1A0587B500380AD8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7247F2991A0587B500380AD8 /* Images.xcassets */; };
-		7247F2A11A0587B500380AD8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7247F2A01A0587B500380AD8 /* XCTest.framework */; };
 		7247F2A21A0587B500380AD8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7247F2811A0587B500380AD8 /* Foundation.framework */; };
 		7247F2A31A0587B500380AD8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7247F2851A0587B500380AD8 /* UIKit.framework */; };
-		7247F2AB1A0587B500380AD8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7247F2A91A0587B500380AD8 /* InfoPlist.strings */; };
-		7247F2AD1A0587B500380AD8 /* cgmsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7247F2AC1A0587B500380AD8 /* cgmsTests.m */; };
-		7247F2C31A05883900380AD8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7247F2B81A05883900380AD8 /* AppDelegate.m */; };
-		7247F2C41A05883900380AD8 /* CustomCellBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 7247F2BA1A05883900380AD8 /* CustomCellBackground.m */; };
-		7247F2C51A05883900380AD8 /* RFduino.m in Sources */ = {isa = PBXBuildFile; fileRef = 7247F2BC1A05883900380AD8 /* RFduino.m */; };
-		7247F2C61A05883900380AD8 /* RfduinoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7247F2BF1A05883900380AD8 /* RfduinoManager.m */; };
-		7247F2C71A05883900380AD8 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7247F2C21A05883900380AD8 /* ScanViewController.m */; };
 		7247F2C91A058B5300380AD8 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7247F2C81A058B5300380AD8 /* CoreBluetooth.framework */; };
-		726249861A17169D003D38C3 /* PebbleVendor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 726249851A17169D003D38C3 /* PebbleVendor.framework */; };
-		726249881A1716A2003D38C3 /* PebbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 726249871A1716A2003D38C3 /* PebbleKit.framework */; };
 		7262498A1A1716DB003D38C3 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 726249891A1716DB003D38C3 /* ExternalAccessory.framework */; };
 		7262498C1A1716F3003D38C3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7262498B1A1716F3003D38C3 /* libz.dylib */; };
 		7262498E1A171703003D38C3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7262498D1A171703003D38C3 /* CoreMotion.framework */; };
@@ -46,7 +43,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		722B51841A17E6FC008114DF /* 	.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "\t.entitlements"; sourceTree = "<group>"; };
+		6A63C3841A1997FA00FB5172 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6A63C3851A1997FA00FB5172 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6A63C3861A1997FA00FB5172 /* CustomCellBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellBackground.h; sourceTree = "<group>"; };
+		6A63C3871A1997FA00FB5172 /* CustomCellBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCellBackground.m; sourceTree = "<group>"; };
+		6A63C3881A1997FA00FB5172 /* RFduino.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFduino.h; sourceTree = "<group>"; };
+		6A63C3891A1997FA00FB5172 /* RFduino.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFduino.m; sourceTree = "<group>"; };
+		6A63C38A1A1997FA00FB5172 /* RFduinoDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFduinoDelegate.h; sourceTree = "<group>"; };
+		6A63C38B1A1997FA00FB5172 /* RfduinoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfduinoManager.h; sourceTree = "<group>"; };
+		6A63C38C1A1997FA00FB5172 /* RfduinoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RfduinoManager.m; sourceTree = "<group>"; };
+		6A63C38D1A1997FA00FB5172 /* RFduinoManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFduinoManagerDelegate.h; sourceTree = "<group>"; };
+		6A63C38E1A1997FA00FB5172 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
+		6A63C38F1A1997FA00FB5172 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
+		6A63C3951A19982000FB5172 /* PebbleKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PebbleKit.framework; sourceTree = "<group>"; };
+		6A63C3971A19983500FB5172 /* PebbleVendor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PebbleVendor.framework; sourceTree = "<group>"; };
 		722B51851A17E6FC008114DF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		7247F27E1A0587B500380AD8 /* 	.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "	.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7247F2811A0587B500380AD8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -61,25 +71,7 @@
 		7247F2971A0587B500380AD8 /* AppViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppViewController.m; sourceTree = "<group>"; };
 		7247F2991A0587B500380AD8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7247F29F1A0587B500380AD8 /* cgmsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cgmsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7247F2A01A0587B500380AD8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		7247F2A81A0587B500380AD8 /* cgmsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "cgmsTests-Info.plist"; sourceTree = "<group>"; };
-		7247F2AA1A0587B500380AD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7247F2AC1A0587B500380AD8 /* cgmsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cgmsTests.m; sourceTree = "<group>"; };
-		7247F2B71A05883900380AD8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		7247F2B81A05883900380AD8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7247F2B91A05883900380AD8 /* CustomCellBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellBackground.h; sourceTree = "<group>"; };
-		7247F2BA1A05883900380AD8 /* CustomCellBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCellBackground.m; sourceTree = "<group>"; };
-		7247F2BB1A05883900380AD8 /* RFduino.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFduino.h; sourceTree = "<group>"; };
-		7247F2BC1A05883900380AD8 /* RFduino.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFduino.m; sourceTree = "<group>"; };
-		7247F2BD1A05883900380AD8 /* RFduinoDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFduinoDelegate.h; sourceTree = "<group>"; };
-		7247F2BE1A05883900380AD8 /* RfduinoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfduinoManager.h; sourceTree = "<group>"; };
-		7247F2BF1A05883900380AD8 /* RfduinoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RfduinoManager.m; sourceTree = "<group>"; };
-		7247F2C01A05883900380AD8 /* RFduinoManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFduinoManagerDelegate.h; sourceTree = "<group>"; };
-		7247F2C11A05883900380AD8 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
-		7247F2C21A05883900380AD8 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
 		7247F2C81A058B5300380AD8 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		726249851A17169D003D38C3 /* PebbleVendor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PebbleVendor.framework; path = "../pebble-ios-sdk-master/PebbleVendor.framework"; sourceTree = "<group>"; };
-		726249871A1716A2003D38C3 /* PebbleKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PebbleKit.framework; path = "../pebble-ios-sdk-master/PebbleKit.framework"; sourceTree = "<group>"; };
 		726249891A1716DB003D38C3 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		7262498B1A1716F3003D38C3 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		7262498D1A171703003D38C3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -96,10 +88,10 @@
 				722B51861A17E6FC008114DF /* HealthKit.framework in Frameworks */,
 				7262498C1A1716F3003D38C3 /* libz.dylib in Frameworks */,
 				7262498A1A1716DB003D38C3 /* ExternalAccessory.framework in Frameworks */,
-				726249881A1716A2003D38C3 /* PebbleKit.framework in Frameworks */,
-				726249861A17169D003D38C3 /* PebbleVendor.framework in Frameworks */,
 				7247F2C91A058B5300380AD8 /* CoreBluetooth.framework in Frameworks */,
 				7247F2841A0587B500380AD8 /* CoreGraphics.framework in Frameworks */,
+				6A63C3981A19983500FB5172 /* PebbleVendor.framework in Frameworks */,
+				6A63C3961A19982000FB5172 /* PebbleKit.framework in Frameworks */,
 				7247F2861A0587B500380AD8 /* UIKit.framework in Frameworks */,
 				7247F2821A0587B500380AD8 /* Foundation.framework in Frameworks */,
 			);
@@ -109,7 +101,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7247F2A11A0587B500380AD8 /* XCTest.framework in Frameworks */,
 				7247F2A31A0587B500380AD8 /* UIKit.framework in Frameworks */,
 				7247F2A21A0587B500380AD8 /* Foundation.framework in Frameworks */,
 			);
@@ -118,13 +109,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A63C3831A1997FA00FB5172 /* rfduino */ = {
+			isa = PBXGroup;
+			children = (
+				6A63C3841A1997FA00FB5172 /* AppDelegate.h */,
+				6A63C3851A1997FA00FB5172 /* AppDelegate.m */,
+				6A63C3861A1997FA00FB5172 /* CustomCellBackground.h */,
+				6A63C3871A1997FA00FB5172 /* CustomCellBackground.m */,
+				6A63C3881A1997FA00FB5172 /* RFduino.h */,
+				6A63C3891A1997FA00FB5172 /* RFduino.m */,
+				6A63C38A1A1997FA00FB5172 /* RFduinoDelegate.h */,
+				6A63C38B1A1997FA00FB5172 /* RfduinoManager.h */,
+				6A63C38C1A1997FA00FB5172 /* RfduinoManager.m */,
+				6A63C38D1A1997FA00FB5172 /* RFduinoManagerDelegate.h */,
+				6A63C38E1A1997FA00FB5172 /* ScanViewController.h */,
+				6A63C38F1A1997FA00FB5172 /* ScanViewController.m */,
+			);
+			path = rfduino;
+			sourceTree = "<group>";
+		};
 		7247F2751A0587B500380AD8 = {
 			isa = PBXGroup;
 			children = (
-				722B51841A17E6FC008114DF /* 	.entitlements */,
-				7247F2B61A05883900380AD8 /* rfduino */,
+				6A63C3831A1997FA00FB5172 /* rfduino */,
 				7247F2871A0587B500380AD8 /* cgms */,
-				7247F2A61A0587B500380AD8 /* cgmsTests */,
 				7247F2801A0587B500380AD8 /* Frameworks */,
 				7247F27F1A0587B500380AD8 /* Products */,
 			);
@@ -146,14 +154,13 @@
 				7262498F1A171713003D38C3 /* MessageUI.framework */,
 				7262498D1A171703003D38C3 /* CoreMotion.framework */,
 				7262498B1A1716F3003D38C3 /* libz.dylib */,
+				6A63C3971A19983500FB5172 /* PebbleVendor.framework */,
 				726249891A1716DB003D38C3 /* ExternalAccessory.framework */,
-				726249871A1716A2003D38C3 /* PebbleKit.framework */,
-				726249851A17169D003D38C3 /* PebbleVendor.framework */,
+				6A63C3951A19982000FB5172 /* PebbleKit.framework */,
 				7247F2C81A058B5300380AD8 /* CoreBluetooth.framework */,
 				7247F2811A0587B500380AD8 /* Foundation.framework */,
 				7247F2831A0587B500380AD8 /* CoreGraphics.framework */,
 				7247F2851A0587B500380AD8 /* UIKit.framework */,
-				7247F2A01A0587B500380AD8 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -179,44 +186,6 @@
 				7247F28F1A0587B500380AD8 /* cgms-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		7247F2A61A0587B500380AD8 /* cgmsTests */ = {
-			isa = PBXGroup;
-			children = (
-				7247F2AC1A0587B500380AD8 /* cgmsTests.m */,
-				7247F2A71A0587B500380AD8 /* Supporting Files */,
-			);
-			path = cgmsTests;
-			sourceTree = "<group>";
-		};
-		7247F2A71A0587B500380AD8 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				7247F2A81A0587B500380AD8 /* cgmsTests-Info.plist */,
-				7247F2A91A0587B500380AD8 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		7247F2B61A05883900380AD8 /* rfduino */ = {
-			isa = PBXGroup;
-			children = (
-				7247F2B71A05883900380AD8 /* AppDelegate.h */,
-				7247F2B81A05883900380AD8 /* AppDelegate.m */,
-				7247F2B91A05883900380AD8 /* CustomCellBackground.h */,
-				7247F2BA1A05883900380AD8 /* CustomCellBackground.m */,
-				7247F2BB1A05883900380AD8 /* RFduino.h */,
-				7247F2BC1A05883900380AD8 /* RFduino.m */,
-				7247F2BD1A05883900380AD8 /* RFduinoDelegate.h */,
-				7247F2BE1A05883900380AD8 /* RfduinoManager.h */,
-				7247F2BF1A05883900380AD8 /* RfduinoManager.m */,
-				7247F2C01A05883900380AD8 /* RFduinoManagerDelegate.h */,
-				7247F2C11A05883900380AD8 /* ScanViewController.h */,
-				7247F2C21A05883900380AD8 /* ScanViewController.m */,
-			);
-			name = rfduino;
-			path = "../../Documents/Arduino/libraries/RFduino/iPhone Apps/rfduino";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +236,7 @@
 				ORGANIZATIONNAME = "___FULLUSERNAME___";
 				TargetAttributes = {
 					7247F27D1A0587B500380AD8 = {
-						DevelopmentTeam = 7UJFMU84Y9;
+						DevelopmentTeam = M3D8H9R52H;
 						SystemCapabilities = {
 							com.apple.HealthKit = {
 								enabled = 1;
@@ -313,7 +282,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7247F2AB1A0587B500380AD8 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,13 +292,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7247F2C31A05883900380AD8 /* AppDelegate.m in Sources */,
-				7247F2C61A05883900380AD8 /* RfduinoManager.m in Sources */,
+				6A63C3911A1997FA00FB5172 /* CustomCellBackground.m in Sources */,
+				6A63C3931A1997FA00FB5172 /* RfduinoManager.m in Sources */,
 				7247F2981A0587B500380AD8 /* AppViewController.m in Sources */,
-				7247F2C71A05883900380AD8 /* ScanViewController.m in Sources */,
-				7247F2C51A05883900380AD8 /* RFduino.m in Sources */,
-				7247F2C41A05883900380AD8 /* CustomCellBackground.m in Sources */,
 				7247F28E1A0587B500380AD8 /* main.m in Sources */,
+				6A63C3941A1997FA00FB5172 /* ScanViewController.m in Sources */,
+				6A63C3901A1997FA00FB5172 /* AppDelegate.m in Sources */,
+				6A63C3921A1997FA00FB5172 /* RFduino.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +306,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7247F2AD1A0587B500380AD8 /* cgmsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,14 +334,6 @@
 				7247F2941A0587B500380AD8 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		7247F2A91A0587B500380AD8 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7247F2AA1A0587B500380AD8 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -457,17 +416,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = "\t.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/donaldbrowne/Desktop/pebble-ios-sdk-master",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cgms/cgms-Prefix.pch";
 				INFOPLIST_FILE = "cgms/cgms-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -480,17 +440,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = "\t.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/donaldbrowne/Desktop/pebble-ios-sdk-master",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cgms/cgms-Prefix.pch";
 				INFOPLIST_FILE = "cgms/cgms-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
